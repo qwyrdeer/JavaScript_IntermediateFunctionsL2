@@ -11,7 +11,7 @@
 // Log het antwoord in de terminal.
 // ---- Verwachte uitkomst: 6
 console.log("opdracht 1a")
-const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6 ];
 
 let numberCumLaude = 0;
 
@@ -133,7 +133,7 @@ console.log(averageGrade(grades).toFixed(2));
 console.log(averageGrade([6, 4, 5]).toFixed(2));
 console.log(averageGrade([8, 9, 4, 6, 10]).toFixed(2));
 
-
+console.log("bonus 3a")
 /* Bonusopdracht: hoogste cijfer */
 
 /* 3a: Script schrijven  */
@@ -142,10 +142,30 @@ console.log(averageGrade([8, 9, 4, 6, 10]).toFixed(2));
 // * Op welke conditie moet ik checken?
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
 // Log het antwoord in de terminal.
-
 // ---- Verwachte uitkomst: 9
 
+// ik bekijk een getal en sla dat op
+// ik ga naar het volgende getal
+// ik vergelijk dat getal met het vorige getal
+// is het hoger? dan sla ik hem op
+// is het lager? dan doe ik er niks mee
 
+let highestFoundGrade = 0
+
+function highestGrade3a(grades) {
+
+    for (let i = 0; i < grades.length; i++)
+    {
+        if (grades[i] >= highestFoundGrade) {
+            highestFoundGrade = (highestFoundGrade - highestFoundGrade) + grades[i];
+        }
+    }
+    return highestFoundGrade;
+}
+
+console.log(highestGrade3a(grades));
+
+console.log("bonus 3b")
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
@@ -155,3 +175,18 @@ console.log(averageGrade([8, 9, 4, 6, 10]).toFixed(2));
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade(grades) {
+    let highestFoundGrade = 0
+    for (let i = 0; i < grades.length; i++)
+    {
+        if (grades[i] >= highestFoundGrade) {
+            highestFoundGrade = (highestFoundGrade - highestFoundGrade) + grades[i];
+        }
+    }
+    return highestFoundGrade;
+}
+
+console.log(highestGrade(grades));
+console.log(highestGrade([6, 4, 5]));
+console.log(highestGrade([8, 9, 4, 6, 10]));
