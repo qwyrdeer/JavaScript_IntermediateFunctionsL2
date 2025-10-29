@@ -180,7 +180,7 @@ function highestGrade(grades) {
     let highestFoundGrade = 0
     for (let i = 0; i < grades.length; i++)
     {
-        if (grades[i] >= highestFoundGrade) {
+        if (grades[i] > highestFoundGrade) {
             highestFoundGrade = (highestFoundGrade - highestFoundGrade) + grades[i];
         }
     }
