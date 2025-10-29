@@ -8,6 +8,8 @@
 // getEmailDomain("n.eeken@novi-education.nl") geeft novi-education.nl
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
+
+
 function getEmailDomain(emailadres){
     const domeinnaam = emailadres.split("@");
     return domeinnaam[1];
@@ -18,24 +20,21 @@ console.log(getEmailDomain("t.mellink@novi.nl"));
 console.log(getEmailDomain("a.wiersma@outlook.com"));
 
 
-
 /* Opdracht  2 */
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
 // ---- Verwachte uitkomsten:
 // typeOfEmail("n.eeken@novi-education.nl") geeft "Student"
-// typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
-// typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
+// typeOfEmail("t.mellink@novi.nl") geeft "Medewerker"
+// typeOfEmail("novi.nlaapjesk@outlook.com") geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 function typeOfEmail(emailadres){
     const domeinnaam = emailadres.split("@");
-    const roleCheck = domeinnaam[1]
+    const roleCheck = domeinnaam[1];
     switch (roleCheck){
         case "novi.nl":
             return "medewerker"
-            break;
         case "novi-education.nl":
             return "student"
-            break;
         default:
             return "extern"
     }
@@ -59,11 +58,35 @@ console.log(typeOfEmail("a.wiersma@outlook.com"));
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
-function checkEmailValidity(emailadres){
-    const email = emailadres;
-    if (email.includes("@"))
-        if (email.endsWith("."))
-            if (email.)
+// function checkEmailValidity(emailadres) {
+// //     const invalidEmail
+// //     {
+// //         forbiddenChars: [",", "/"]
+// //         endsMailWith: "."
+// //     }
+// //     search("@")
+// //         .endsWith(".")
+// // }
+// //     if (email.includes("@")) && (email.
+// //     switch (email){
+// //         case (email.includes("@")) && (email.
+// //         return "true"
+// //         break;
+// //         default:
+// //             return "false"
+// //     }
+// }
+
+function checkEmailValidity(emailadres) {
+const hasAtSymbol = emailadres.includes("@");
+const hasNoComma = !emailadres.includes(",");
+const hasNoEndDot = !emailadres.endsWith(".");
+
+if (hasAtSymbol && hasNoComma && hasNoEndDot) {
+    return true;
+} else {
+    return false;
+}
 }
 
 console.log(checkEmailValidity("n.eeken@novi.nl"));
