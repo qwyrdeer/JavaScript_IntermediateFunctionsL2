@@ -150,17 +150,17 @@ console.log("bonus 3a")
 // is het hoger? dan sla ik hem op
 // is het lager? dan doe ik er niks mee
 
-let highestFoundGrade = 0
+let highestFoundGrade3a = 0
 
 function highestGrade3a(grades) {
 
     for (let i = 0; i < grades.length; i++)
     {
-        if (grades[i] >= highestFoundGrade) {
-            highestFoundGrade = (highestFoundGrade - highestFoundGrade) + grades[i];
+        if (grades[i] >= highestFoundGrade3a) {
+            highestFoundGrade3a = (highestFoundGrade3a - highestFoundGrade3a) + grades[i];
         }
     }
-    return highestFoundGrade;
+    return highestFoundGrade3a;
 }
 
 console.log(highestGrade3a(grades));
